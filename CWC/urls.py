@@ -15,7 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from blog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', homepage_view, name='blog'),
+    path('about/', about_view, name='blog'),
+    path('privacy_policy/', privacy_policy_view, name='blog'),
+    path('recipes/', all_recipes_view, name='blog'),
+    path('recipes/banana_bread/', banana_bread_view, name='blog'),
+    path('recipes/breakfast_sandwich/', breakfast_sandwich_view, name='blog'),
+    path('recipes/cookie_dough_cupcakes/', cookie_dough_cupcakes_view, name='blog'),
+    path('recipes/lemon_chicken/', lemon_chicken_view, name='blog'),
+    path('recipes/sweet_cream_cold_brew/', sweet_cream_cold_brew_view, name='blog'),
+    path('experiments/', experiments_view, name='blog'),
+    path('experiments/edible_cookie_dough/', edible_cookie_dough_view, name='blog'),
+    path('site_map.xml', site_map_view, name='blog'),
+    #path for error pages go here?
 ]
+
+handler404 = 'blog.views.page_not_found_view'
+handler500 = 'blog.views.server_error_view'
+# handler403 = 'permission_denied_view'
+# handler400 = 'bad_request_view'
