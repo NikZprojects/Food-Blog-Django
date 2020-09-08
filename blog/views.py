@@ -75,3 +75,6 @@ def server_error_view(request, *args, **kwargs):
 
 def site_map_view(request, *args, **kwargs):
     return render(request, 'sitemap.xml', {})
+
+def robots_txt_view(request, *args, **kwargs):
+    return render(request, 'robots.txt', {})
