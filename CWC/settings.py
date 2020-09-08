@@ -10,17 +10,22 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Path, PurePath
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&gth@qp9rpng5)0!7s-94zpj6sw3bn78u7!619q$tw!z0r$v%*'
+secret_path = PurePath(BASE_DIR, 'secret_key')
+if Path(secret_path).exists():
+    SECRET_KEY = bytes(open(secret_path, 'r').read().rstrip(), 'UTF-8')
+else:
+    # For development only:
+    SECRET_KEY = '&gth@qp9rpng5)0!7s-94zpj6sw3bn78u7!619q$tw!z0r$v%*'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
