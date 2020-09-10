@@ -31,6 +31,7 @@ urlpatterns = [
     path('experiments/', experiments_view, name='blog'),
     path('experiments/edible_cookie_dough/', edible_cookie_dough_view, name='blog'),
     path('site_map.xml', site_map_view, name='blog'),
+    path('robots.txt', robots_txt_view, name='blog'),
     #path for error pages go here?
 ]
 
