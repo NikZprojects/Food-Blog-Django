@@ -21,7 +21,7 @@ def all_recipes_redirect():
     return redirect("/recipes/", *args, permanent=True, **kwargs)
 
 def banana_bread_view(request, *args, **kwargs):
-    name = "The Best Banana Bread (Two Ways)"
+    name = "The Best Banana Bread"
     description = "You can't go wrong with this banana bread recipe."
     return render(request, "recipes/banana_bread.html", {'name':name, 'description':description})
 def banana_bread_redirect():
