@@ -28,7 +28,10 @@ else:
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if Path(BASE_DIR, 'DEBUG').exists():
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'cookwithchemistry.com', 'www.cookwithchemistry.com']
 

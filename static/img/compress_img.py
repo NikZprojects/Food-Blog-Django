@@ -4,7 +4,7 @@ import glob, os
 size = 1500, 1000
 thumb_size = 1500, 1125
 
-for infile in glob.glob("*.jpg"):
+for infile in glob.glob("**/*.jpg", recursive=True):
     file, ext = os.path.splitext(infile)
     im = Image.open(infile)
     if 'thumb' in file:
@@ -12,4 +12,4 @@ for infile in glob.glob("*.jpg"):
         print(file)
     else:
         im.thumbnail(size)
-    im.save(file + '.JPG', "JPEG")
+    im.save(file + '.JPG', "JPEG", optimize=True, quality=85)
