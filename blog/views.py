@@ -4,10 +4,6 @@ from django.http import HttpResponse
 # Create your views here.
 def homepage_view(request, *args, **kwargs):
     response = render(request, "index.html", {})
-    if 'accept_cookies' in request.COOKIES:
-        print('cookies accepted!')
-    else:
-        response.set_cookie('accept_cookies', value=True)
     return response
 
 def about_view(request, *args, **kwargs):
