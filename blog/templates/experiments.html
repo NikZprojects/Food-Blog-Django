@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
+{% load static %}
+
 <head>
   <title>Experiments</title>
   <meta name="description" content="These experiments put a fresh twist on classic recipes."/>
@@ -13,14 +15,20 @@
 
 <body class="container-fluid">
   <div class="row align-items-center mw-100 mx-3">
+    <div class="col-md p-2">
+      <a href="/experiments/homemade_grape_jam/">
+      <div class="image"><img class="img-fluid rounded" src="{% static '/img/grape_jam_expt/0-thumb.JPG' %}"  alt="Homemade Grape Jam">
+        <div class="caption"><h2><span>Experiment #002: </span><span>Homemade Grape Jam</span></h2></div>
+      </div>
+      </a>
+    </div>
     <div class="col-md-6 p-2">
       <a href="/experiments/edible_cookie_dough/">
-        <div class="image"><img class="img-fluid rounded" src="/static/img/cookie_dough/2.JPG"  alt="Edible Cookie Dough">
+        <div class="image"><img class="img-fluid rounded" src="{% static '/img/cookie_dough/2.JPG' %}"  alt="Edible Cookie Dough">
           <div class="caption"><h2><span>Experiment #001:</span><span>Edible Cookie Dough</span></h2></div>
         </div>
       </a>
     </div>
-    <div class="col-md-6 p-2"></div>
   </div>
 </body>
 </div>

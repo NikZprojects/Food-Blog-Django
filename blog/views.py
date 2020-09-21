@@ -68,6 +68,13 @@ def edible_cookie_dough_view(request, *args, **kwargs):
 def edible_cookie_dough_redirect(request, *args, **kwargs):
     return redirect("/experiments/edible_cookie_dough/", *args, permanent=True, **kwargs)
 
+def homemade_grape_jam_view(request, *args, **kwargs):
+    name = "Experiment #002: Homemade Grape Jam"
+    description = "Can grape jam be made at home without added pectin?"
+    return render(request, "experiments/homemade_grape_jam.html", {'name':name, 'description':description})
+def homemade_grape_jam_redirect(request, *args, **kwargs):
+    return redirect("/experiments/homemade_grape_jam/", *args, permanent=True, **kwargs)
+
 def page_not_found_view(request, *args, **kwargs):
     return render(request, 'errors/404.html', {})
 

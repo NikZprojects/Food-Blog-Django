@@ -30,9 +30,9 @@ urlpatterns = [
     path('recipes/sweet_cream_cold_brew/', sweet_cream_cold_brew_view, name='blog'),
     path('experiments/', experiments_view, name='blog'),
     path('experiments/edible_cookie_dough/', edible_cookie_dough_view, name='blog'),
+    path('experiments/homemade_grape_jam/', homemade_grape_jam_view, name='blog'),
     path('sitemap.xml', site_map_view, name='blog'),
     path('robots.txt', robots_txt_view, name='blog'),
-    #path for error pages go here?
 ]
 
 handler404 = 'blog.views.page_not_found_view'
