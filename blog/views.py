@@ -21,12 +21,26 @@ def all_recipes_view(request, *args, **kwargs):
 def all_recipes_redirect():
     return redirect("/recipes/", *args, permanent=True, **kwargs)
 
+def avocado_toast_view(request, *args, **kwargs):
+    name = "My Favorite Avocado Toast"
+    description = "Olive oil and paramasean cheese take this recipe to the next level."
+    return render(request, "recipes/avocado_toast.html", {'name':name, 'description':description})
+def avocado_toast_redirect():
+    return redirect("/recipes/avocado_toast/", *args, permanent=True, **kwargs)
+
 def banana_bread_view(request, *args, **kwargs):
     name = "The Best Banana Bread"
     description = "You can't go wrong with this banana bread recipe."
     return render(request, "recipes/banana_bread.html", {'name':name, 'description':description})
 def banana_bread_redirect():
     return redirect("/recipes/banana_bread/", *args, permanent=True, **kwargs)
+
+def banana_bread_overnight_oats_view(request, *args, **kwargs):
+    name = "Banana Bread Overnight Oats"
+    description = "These overnight oats are perfect for the fall."
+    return render(request, "recipes/banana_bread_overnight_oats.html", {'name':name, 'description':description})
+def banana_bread_overnight_oats_redirect():
+    return redirect("/recipes/banana_bread_overnight_oats/", *args, permanent=True, **kwargs)
 
 def breakfast_sandwich_view(request, *args, **kwargs):
     name = "Deli-Style Breakfast Sandwich"
