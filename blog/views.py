@@ -21,6 +21,13 @@ def all_recipes_view(request, *args, **kwargs):
 def all_recipes_redirect():
     return redirect("/recipes/", *args, permanent=True, **kwargs)
 
+def avocado_toast_view(request, *args, **kwargs):
+    name = "My Favorite Avocado Toast"
+    description = "Olive oil and Parmesan cheese take this recipe to the next level."
+    return render(request, "recipes/avocado_toast.html", {'name':name, 'description':description})
+def avocado_toast_redirect():
+    return redirect("/recipes/avocado_toast/", *args, permanent=True, **kwargs)
+
 def banana_bread_view(request, *args, **kwargs):
     name = "The Best Banana Bread"
     description = "You can't go wrong with this banana bread recipe."

@@ -23,6 +23,7 @@ urlpatterns = [
     path('about/', about_view, name='blog'),
     path('privacy_policy/', privacy_policy_view, name='blog'),
     path('recipes/', all_recipes_view, name='blog'),
+    path('recipes/avocado_toast/', avocado_toast_view, name='blog'),
     path('recipes/banana_bread/', banana_bread_view, name='blog'),
     path('recipes/breakfast_sandwich/', breakfast_sandwich_view, name='blog'),
     path('recipes/cookie_dough_cupcakes/', cookie_dough_cupcakes_view, name='blog'),
