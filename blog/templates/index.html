@@ -17,8 +17,6 @@
   <link rel="stylesheet" href="/static/scripts/style.css">
   <!-- social media icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Pinterest button functionality -->
-  <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 </head>
 
 
@@ -138,18 +136,11 @@
       <span><d class="p-3"> Copyright &copy; 2020 Cook with Chemistry </d></span>
       <span>
         <a class="footer p-3" href="/about/"> About </a> |
-        
+
         <a class="footer p-3" href="mailto:cookwithchemistryblog@gmail.com"> Contact </a>
       </span>
     </p>
   </div>
-  {% if 'accept_cookies' not in request.COOKIES %}
-  <script src="{% static '/scripts/cookieConsent.js' %}"></script>
-  <div id="cookieConsent">
-    <div id="closeCookieConsent">x</div>
-    This site uses cookies to improve your experience and enable certain functionality. <a href="/privacy_policy/" target="_blank">Learn more</a>. <a class="cookieConsentOK">Accept</a>
-  </div>
-  {% endif %}
 </body>
 
 </html>
