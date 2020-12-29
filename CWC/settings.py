@@ -30,10 +30,13 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 if Path(BASE_DIR, 'DEBUG').exists():
     DEBUG = True
+    hosts_allowed = ['localhost', '127.0.0.1']
 else:
     DEBUG = False
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'cookwithchemistry.com', 'www.cookwithchemistry.com']
+    SECURE_SSL_REDIRECT = True
+    Prepend_WWW = True
+    hosts_allowed = ['cookwithchemistry.com', 'www.cookwithchemistry.com']
+ALLOWED_HOSTS = hosts_allowed
 
 # Application definition
 
@@ -128,6 +131,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    PurePath(BASE_DIR, 'static')
-]
+STATICFILES_DIRS = [PurePath(BASE_DIR, 'static')]
